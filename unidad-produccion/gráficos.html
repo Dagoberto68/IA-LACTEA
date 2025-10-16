@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gráficos: Producción Lechera - Operador</title>
+  <link rel="stylesheet" href="../estilos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <section>
+    <h2>Gráfico: Temperatura de la Leche en Recepción</h2>
+    <canvas id="graficoTemperatura" width="400" height="200"></canvas>
+  </section>
+
+  <script>
+    const ctx = document.getElementById('graficoTemperatura').getContext('2d');
+    const grafico = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['08:00', '10:00', '12:00', '14:00', '16:00'],
+        datasets: [{
+          label: 'Temperatura (°C)',
+          data: [7.2, 6.8, 6.5, 6.1, 5.9],
+          borderColor: '#0078d4',
+          backgroundColor: 'rgba(0,120,212,0.2)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            suggestedMin: 4,
+            suggestedMax: 10
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
