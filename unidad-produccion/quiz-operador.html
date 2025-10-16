@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz: Producción Lechera - Operador</title>
+  <link rel="stylesheet" href="../estilos.css" />
+</head>
+<body>
+  <section>
+    <h2>Evaluación Técnica: Producción Lechera</h2>
+    <form onsubmit="return evaluarQuiz()">
+      <p><strong>1. ¿Cuál es la temperatura máxima permitida para la leche cruda en recepción?</strong></p>
+      <label><input type="radio" name="q1" value="a" /> 10°C</label><br>
+      <label><input type="radio" name="q1" value="b" /> 6°C</label><br>
+      <label><input type="radio" name="q1" value="c" /> 4°C</label><br>
+
+      <p><strong>2. ¿Qué parámetro indica la acidez de la leche?</strong></p>
+      <label><input type="radio" name="q2" value="a" /> pH</label><br>
+      <label><input type="radio" name="q2" value="b" /> °Dornic</label><br>
+      <label><input type="radio" name="q2" value="c" /> Conductividad</label><br>
+
+      <p><strong>3. ¿Cuál es el rango típico de densidad de la leche?</strong></p>
+      <label><input type="radio" name="q3" value="a" /> 1.010–1.020</label><br>
+      <label><input type="radio" name="q3" value="b" /> 1.028–1.034</label><br>
+      <label><input type="radio" name="q3" value="c" /> 1.040–1.050</label><br>
+
+      <br>
+      <button type="submit">Enviar respuestas</button>
+    </form>
+
+    <div id="resultado"></div>
+  </section>
+
+  <script>
+    function evaluarQuiz() {
+      const respuestas = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b'
+      };
+      let correctas = 0;
+      for (let q in respuestas) {
+        const seleccionada = document.querySelector(`input[name="${q}"]:checked`);
+        if (seleccionada && seleccionada.value === respuestas[q]) {
+          correctas++;
+        }
+      }
+      const resultado = document.getElementById('resultado');
+      resultado.innerHTML = `<p>Obtuviste ${correctas} de 3 respuestas correctas.</p>`;
+      return false;
+    }
+  </script>
+</body>
+</html>
