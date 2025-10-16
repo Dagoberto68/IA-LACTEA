@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz: Producción Lechera - Técnico</title>
+  <link rel="stylesheet" href="../estilos.css" />
+</head>
+<body>
+  <section>
+    <h2>Evaluación Técnica: Producción Lechera</h2>
+    <form onsubmit="return evaluarQuiz()">
+      <p><strong>1. ¿Qué indica un valor de crioscopía superior a -0.525°C?</strong></p>
+      <label><input type="radio" name="q1" value="a" /> Buena calidad</label><br>
+      <label><input type="radio" name="q1" value="b" /> Posible adulteración</label><br>
+      <label><input type="radio" name="q1" value="c" /> Baja densidad</label><br>
+
+      <p><strong>2. ¿Cuál es el rango aceptable de densidad para leche cruda?</strong></p>
+      <label><input type="radio" name="q2" value="a" /> 1.020–1.026</label><br>
+      <label><input type="radio" name="q2" value="b" /> 1.028–1.034</label><br>
+      <label><input type="radio" name="q2" value="c" /> 1.036–1.040</label><br>
+
+      <p><strong>3. ¿Qué indica un resultado positivo en el test de alcohol?</strong></p>
+      <label><input type="radio" name="q3" value="a" /> Alta estabilidad proteica</label><br>
+      <label><input type="radio" name="q3" value="b" /> Inestabilidad proteica</label><br>
+      <label><input type="radio" name="q3" value="c" /> Presencia de antibióticos</label><br>
+
+      <br>
+      <button type="submit">Enviar respuestas</button>
+    </form>
+
+    <div id="resultado"></div>
+  </section>
+
+  <script>
+    function evaluarQuiz() {
+      const respuestas = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b'
+      };
+      let correctas = 0;
+      for (let q in respuestas) {
+        const seleccionada = document.querySelector(`input[name="${q}"]:checked`);
+        if (seleccionada && seleccionada.value === respuestas[q]) {
+          correctas++;
+        }
+      }
+      const resultado = document.getElementById('resultado');
+      resultado.innerHTML = `<p>Obtuviste ${correctas} de 3 respuestas correctas.</p>`;
+      return false;
+    }
+  </script>
+</body>
+</html>
