@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gráficos: Producción Lechera - Técnico</title>
+  <link rel="stylesheet" href="../estilos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <section>
+    <h2>Gráfico: Parámetros de Calidad en Recepción</h2>
+    <canvas id="graficoCalidad" width="400" height="200"></canvas>
+  </section>
+
+  <script>
+    const ctx = document.getElementById('graficoCalidad').getContext('2d');
+    const grafico = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Densidad', 'Acidez', 'Crioscopía', 'Alcohol'],
+        datasets: [{
+          label: 'Valores Medidos',
+          data: [1.030, 16, -0.530, 1],
+          backgroundColor: ['#0078d4', '#00b294', '#ff8c00', '#e3008c']
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
