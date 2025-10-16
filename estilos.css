@@ -1,0 +1,99 @@
+/* Tipografía moderna y limpia */
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fb;
+  color: #333;
+}
+
+/* Encabezado */
+header {
+  background-color: #005baa;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+h1 {
+  margin: 10px 0 5px;
+  font-size: 2em;
+}
+
+p {
+  margin: 0;
+  font-size: 1em;
+}
+
+/* Selector de perfil */
+#perfil-selector {
+  text-align: center;
+  padding: 20px;
+}
+
+#perfil-selector button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#perfil-selector button:hover {
+  background-color: #005baa;
+}
+
+/* Unidades técnicas */
+#unidades {
+  padding: 20px;
+  background-color: #e6eef7;
+}
+
+#unidades ul {
+  list-style: none;
+  padding: 0;
+}
+
+#unidades li {
+  margin: 10px 0;
+}
+
+#unidades a {
+  text-decoration: none;
+  color: #005baa;
+  font-weight: bold;
+}
+
+#unidades a:hover {
+  text-decoration: underline;
+}
+
+/* Bloques de contenido */
+section[id^="unidad"] {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+h2, h3, h4 {
+  color: #005baa;
+}
+
+/* Footer */
+footer {
+  background-color: #005baa;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+}
