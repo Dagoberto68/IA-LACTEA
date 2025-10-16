@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulación: Producción Lechera - Técnico</title>
+  <link rel="stylesheet" href="../estilos.css" />
+</head>
+<body>
+  <section>
+    <h2>Simulación: Validación de Parámetros</h2>
+    <p>Completa los valores para validar la leche recibida:</p>
+
+    <form>
+      <label>Crioscopía (°C):</label>
+      <input type="number" step="0.001" /><br><br>
+
+      <label>Acidez (°Dornic):</label>
+      <input type="number" /><br><br>
+
+      <label>Densidad (g/cm³):</label>
+      <input type="number" step="0.001" /><br><br>
+
+      <label>Resultado test de alcohol:</label>
+      <select>
+        <option>Apto</option>
+        <option>No apto</option>
+      </select><br><br>
+
+      <button type="button" onclick="alert('Parámetros validados. Lote aceptado.')">Validar lote</button>
+    </form>
+  </section>
+</body>
+</html>
